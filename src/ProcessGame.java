@@ -3,6 +3,7 @@ public class ProcessGame {
     /**Arrays of each selected door (true/false for car/goat) for each iteration*/
     private boolean[] stayResults, switchResults;
     private int iterations;
+    private boolean pleaseDelete;
 
     /**Creates a game and makes a random selection. Then stores the results in respective array for each iteration
      *
