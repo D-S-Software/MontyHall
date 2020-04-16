@@ -3,7 +3,6 @@ public class ProcessGame {
     /**Arrays of each selected door (true/false for car/goat) for each iteration*/
     private boolean[] stayResults, switchResults;
     private int iterations;
-    private int plaseDelete;
 
     /**Creates a game and makes a random selection. Then stores the results in respective array for each iteration
      *
@@ -77,7 +76,7 @@ public class ProcessGame {
      * @param array The result array being printed
      * @param arrayType Which result array is being printed
      */
-    public void printArray(boolean[] array, String arrayType)
+    private void printArray(boolean[] array, String arrayType)
     {
         System.out.print(arrayType + ": [");
         for(int i = 0; i < array.length-1; i++)
