@@ -13,9 +13,10 @@ public class Gui extends JFrame
     JPanel inputPanel = new JPanel();
     JLabel title = new JLabel(), switchPercentLabel = new JLabel(), stayPercentLabel = new JLabel(), iterationsLabel = new JLabel(), doorsLabel = new JLabel(), stayResultLabel = new JLabel(), switchResultLabel = new JLabel();
     JTextField inputTextIt = new JTextField(7), inputTextDoor = new JTextField(7);
-    JButton inputButtonOne = new JButton("Enter"), inputButtonTwo = new JButton("Enter"), startCalcButton = new JButton("Run");
+    JButton inputButtonOne = new JButton("Enter"), inputButtonTwo = new JButton("Enter"), startCalcButton = new JButton("Run"), closeButton = new JButton("Close");
     ProcessGame test;
     int iterations, doorCount;
+    static CreateFile x = new CreateFile();
 
     /**Sets up the GUI for teh program
      *
@@ -102,6 +103,16 @@ public class Gui extends JFrame
 
                 stayPercentLabel.setText(df.format(stayTag) + "%");
                 switchPercentLabel.setText(df.format(switchTag) + "%");
+
+                x.addSpace();
+            }
+        });
+
+        inputPanel.add(closeButton);
+        closeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                x.closeFile();
+                System.exit(0);
             }
         });
 
@@ -109,8 +120,14 @@ public class Gui extends JFrame
         setVisible(true);
     }
 
+    public static CreateFile getCreateFile()
+    {
+        return x;
+    }
+
     public static void main(String[] args)
     {
         Gui monty = new Gui();
+        x.openFile();
     }
 }

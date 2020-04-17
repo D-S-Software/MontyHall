@@ -1,16 +1,15 @@
 import java.lang.*;
-import java.io.*;
 import java.util.*;
 
 public class CreateFile {
 
-    private Formatter ResultsFile;
+    private Formatter resultsFile;
 
     public void openFile()
     {
         try
         {
-            ResultsFile = new Formatter("results/txt");
+            resultsFile = new Formatter("results.txt");
         }
         catch(Exception e)
         {
@@ -18,8 +17,28 @@ public class CreateFile {
         }
     }
 
-    public void addRecords()
+    public void addRecords(boolean[] array)
     {
+        resultsFile.format("%s%s%s", "[", arrayToString(array), "]");
+    }
 
+    public void closeFile()
+    {
+        resultsFile.close();
+    }
+
+    public void addSpace()
+    {
+        resultsFile.format("\n");
+    }
+
+    public String arrayToString(boolean[] array)
+    {
+        String output = array[0] + "";
+        for(int i = 1; i < array.length; i++)
+        {
+            output += " " + array[i];
+        }
+        return output;
     }
 }

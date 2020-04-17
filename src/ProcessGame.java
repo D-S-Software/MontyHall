@@ -57,7 +57,6 @@ public class ProcessGame {
      */
     public boolean[] getStayResults()
     {
-        printArray(stayResults, "StayResults");
         return stayResults;
     }
 
@@ -67,7 +66,7 @@ public class ProcessGame {
      */
     public boolean[] getSwitchResults()
     {
-        printArray(switchResults, "SwitchResults");
+        Gui.getCreateFile().addRecords(switchResults);
         return switchResults;
     }
 
@@ -76,7 +75,7 @@ public class ProcessGame {
      * @param array The result array being printed
      * @param arrayType Which result array is being printed
      */
-    private void printArray(boolean[] array, String arrayType)
+    public void printArray(boolean[] array, String arrayType)
     {
         System.out.print(arrayType + ": [");
         for(int i = 0; i < array.length-1; i++)
