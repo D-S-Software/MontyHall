@@ -4,4 +4,4 @@ Link to download the [installer](https://drive.google.com/file/d/1eWWnVYAYr4IMnA
 
 # Application Window
 
-![Simple Demo](EpidemicSimGifs/EpidemicSimGeneralShowcase.gif)
+![Preview](MontyHallApplication.png)
